@@ -1,0 +1,19 @@
+{% extends 'layout_post.html' %}
+
+{% load bootstrap4 %}
+
+{% block body %}
+<div>
+    <h2>{{post.title}}</h2>
+    <h6>{{ post.category }} {{ post.pub_date }}</h6>
+    <p>
+        {{ post.body }}
+    </p>
+    <br>
+    {% if request.user.is_authenticated %}
+        <a class="btn btn-outline-info" href="{% url 'todo:edit' post.pk %}" role="button">EDIT</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="btn btn-outline-danger" href="{% url 'todo:delete' post.pk %}" role="button">DELETE</a>
+    {% endif %}
+</div>
+{% endblock %}

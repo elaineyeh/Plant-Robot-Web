@@ -1,0 +1,31 @@
+{% extends 'layout_user.html' %}
+
+{% load bootstrap4 %}
+
+{% block title %}
+  <h1>Plant Robot 知識網</h1>
+  <hr>
+{% endblock %}
+
+{% block body %}
+    <br>
+    <div class="row">
+        <div class="col">
+                <h3>會員登入</h3>
+                <br>
+                <form action="" method="post" class="form">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <a href="{% url 'register' %}" class="mb-2">還沒有加入會員嗎?</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{% url 'password_reset' %}" class="mb-2">忘記密碼?</a>
+                    <br><br>
+                    {% buttons %}
+                      <button type="submit" class="btn btn-primary">
+                        登入
+                      </button>
+                    {% endbuttons %}
+                  </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layout_user.html' %}
+
+{% load bootstrap4 %}
+
+{% block title %}
+<h1>Plant Robot 知識網</h1>
+<hr>
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="row">
+  <div class="col">
+    <h3>修改會員資料</h3>
+    <form action="" method="post" class="form">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <a class="btn btn-outline-secondary" href="{% url 'password_change' %}" role="button">更改密碼</a>
+      <br><br>
+      {% buttons %}
+      <button type="submit" class="btn btn-primary" style="float:left">
+        確定
+      </button>
+      &nbsp;&nbsp;
+      <a class="btn btn-outline-secondary" href="{% url 'index' %}" role="button">取消</a>
+      {% endbuttons %}
+      
+    </form>
+  </div>
+</div>
+{% endblock %}

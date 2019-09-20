@@ -1,0 +1,21 @@
+{% extends 'layout_user.html' %}
+
+{% load bootstrap4 %}
+
+{% block body %}
+<h1>刪除文章</h1>
+    <div class="row">
+        <div class="col">
+                <form action="" method="post" class="form">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <br>
+                    {% buttons %}
+                      <button type="submit" class="btn btn-outline-danger">
+                        Submit
+                      </button>
+                    {% endbuttons %}
+                </form>
+        </div>
+    </div>
+{% endblock %}
