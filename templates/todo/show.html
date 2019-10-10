@@ -1,11 +1,11 @@
-{% extends 'layout_user.html' %}
+{% extends 'layout_post.html' %}
 
 {% load bootstrap4 %}
 
 {% block body %}
 <div>
     <h2>{{post.title}}</h2>
-    <h6>{{ post.category }} {{ post.pub_date }}</h6>
+    <h6>{{ post.category }}  {{ post.pub_date }}</h6>
     <p>
         {{ post.body | linebreaks }}
     </p>
