@@ -60,3 +60,9 @@ urllib3==1.24.1
 virtualenv==16.0.0
 wcwidth==0.1.7
 wrapt==1.11.1
+beautifulsoup4==4.8.1
+django-bootstrap4==1.0.1
+django-extensions==2.2.3
+django-filter==2.2.0
+djangorestframework==3.10.3
+soupsieve==1.9.4
