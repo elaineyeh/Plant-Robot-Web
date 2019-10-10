@@ -1,4 +1,4 @@
-{% extends 'layout_post.html' %}
+{% extends 'layout_user.html' %}
 
 {% load bootstrap4 %}
 
@@ -7,13 +7,14 @@
     <h2>{{post.title}}</h2>
     <h6>{{ post.category }} {{ post.pub_date }}</h6>
     <p>
-        {{ post.body }}
+        {{ post.body | linebreaks }}
     </p>
     <br>
     {% if request.user.is_authenticated %}
-        <a class="btn btn-outline-info" href="{% url 'todo:edit' post.pk %}" role="button">EDIT</a>
+        <a class="btn btn-outline-info" href="{% url 'todo:edit' post.pk %}" role="button">修 改</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a class="btn btn-outline-danger" href="{% url 'todo:delete' post.pk %}" role="button">DELETE</a>
+        <a class="btn btn-outline-danger" href="{% url 'todo:delete' post.pk %}" role="button">刪 除</a>
     {% endif %}
+    <br><br><br>
 </div>
 {% endblock %}

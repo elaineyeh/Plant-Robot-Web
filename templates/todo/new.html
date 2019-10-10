@@ -4,14 +4,16 @@
 
 {% block body %}
 <h1>新增文章</h1>
+<br>
     <div class="row">
         <div class="col">
                 <form action="" method="post" class="form"  enctype="multipart/form-data">
                     {% csrf_token %}
                     {% bootstrap_form form %}
                     {% buttons %}
-                      <button type="submit" class="btn btn-primary">
-                        Submit
+                    <br>
+                      <button type="submit" class="btn btn-info">
+                        新 增
                       </button>
                     {% endbuttons %}
                   </form>

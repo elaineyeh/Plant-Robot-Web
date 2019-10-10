@@ -47,7 +47,7 @@
               <div class="col-4">
               </div>
               <div class="col-4 text-center">
-                  <font size="5"><a class="nav-link" style="color:#006400" href="#">Plant Robot</a></font>
+                  <font size="5"><a class="nav-link" style="color:#006400" href="{% url 'index' %}">Plant Robot</a></font>
               </div>
               <div class="col-5 text-center">
                   {% if request.user.is_authenticated %}
@@ -70,8 +70,6 @@
     <div class="container">
 	    <div class="row">
 		    <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    </nav>
                 <br>
                 <div class="row">
                     <div class="col-md-12">

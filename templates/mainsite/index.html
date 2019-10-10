@@ -5,14 +5,127 @@
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
 
-    {% block body %}
-  <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+    {% block title %}
+  <div class="jumbotron p-3 p-md-5 text-white rounded" style="background-image: url(https://i.imgur.com/toP0CWg.png); background-repeat: no-repeat;background-size:cover; width: 1110px;height: 525px;">
     <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+      <h1 class="display-4 font-italic"></h1>
+      <p class="lead my-3"></p>
+      <p class="lead mb-0"></p>
     </div>
   </div>
+    {% endblock %}
+  
+  {% block body %}
+  <div style="width:1280px;height:690px;background:rgba(102, 205, 170, 0.3);overflow:hidden" id="about">
+      <br>
+      <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-3">
+          </div>
+          <div class="col-6 text-center">
+              <font size="6"><a class="nav-link" style="color:#006400">Plant Robot 帶你輕鬆成為綠手指</a></font>
+          </div>
+          <div class="col-3">
+          </div>
+      </div>
+      <dic class="container">
+      <div class="row">
+          <div class="col-md-6" style="padding-left:20px;padding-right:0px;">
+              <div class="card" style="width: 37rem;margin: 0 auto;border:none;">
+                  <img src="https://i.imgur.com/TItVY1s.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">使用教學</h5>
+                    <p class="card-text">不知道該如何使用 Plant Robot 或不知道有什麼功能嗎？</p>
+                    <a href="#" class="btn btn-info">開始教學</a>
+                  </div>
+                </div>
+          </div>
+          <div class="col-md-6" style="padding-left:0px;padding-right:20px;">
+              <div class="card" style="width: 37rem;margin: 0 auto;border:none;">
+                  <img src="https://i.imgur.com/N6bonfU.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">植物小知識</h5>
+                    <p class="card-text">想知道更多關於植物的知識嗎？</p>
+                    <a href="#" class="btn btn-info">閱讀知識</a>
+                  </div>
+                </div>
+          </div>
+      </div>
+      </div>
+      
+  </div>
+
+  <div style="width:1280px;height:690px;background:rgba(240, 255, 255, 0.7);overflow:hidden" id="team">
+      <br>
+      <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-3">
+          </div>
+          <div class="col-6 text-center">
+              <font size="6"><a class="nav-link" style="color:#006400">專案團隊</a></font>
+          </div>
+          <div class="col-3">
+          </div>
+      </div>
+      <div class="container">
+        <br>
+          <div class="card-deck">
+              <div class="card" style="border-radius:10px; background:rgba(175, 238, 238, 0);">
+                <br>
+                <img src="https://i.imgur.com/ScMFSBE.png" class="card-img-top" style="margin: auto; border-radius:150px; width: 170px;height: 170px;">
+                <div class="card-body">
+                    <br>
+                  <h5 class="card-title">劉巽言</h5>
+                  <hr>
+                  <p class="card-text">Line bot 端</p>
+                  <p class="card-text">資料庫連接</p>
+                  </div>
+              </div>
+              <div class="card" style="border-radius:10px; background:rgba(175, 238, 238, 0);">
+                  <br>
+                <img src="https://i.imgur.com/ScMFSBE.png" class="card-img-top" style="margin: auto; border-radius:150px; width: 170px;height: 170px;">
+                <div class="card-body">
+                    <br>
+                  <h5 class="card-title">吳雨璇</h5>
+                  <hr>
+                  <p class="card-text">硬體組裝</p>
+                </div>
+              </div>
+              <div class="card" style="border-radius:10px; background:rgba(175, 238, 238, 0);">
+                  <br>
+                <img src="https://i.imgur.com/ScMFSBE.png" class="card-img-top" style="margin: auto; border-radius:150px; width: 170px;height: 170px;">
+                <div class="card-body">
+                    <br>
+                  <h5 class="card-title">葉昱彤</h5>
+                  <hr>
+                  <p class="card-text">Webduino 端</p>
+                  <p class="card-text">網頁前端</p>
+                  <p class="card-text">網頁後端</p>
+                  <p class="card-text">ＭySQL 資料庫建置</p>
+                  <p class="card-text">Firebase 資料庫建置</p>
+                  <p class="card-text">資料庫連接</p>
+                  </div>
+              </div>
+              <div class="card" style="border-radius:10px; background:rgba(175, 238, 238, 0);">
+                  <br>
+                  <img src="https://i.imgur.com/ScMFSBE.png" class="card-img-top" style="margin: auto; border-radius:150px; width: 170px;height: 170px;">
+                  <div class="card-body">
+                      <br>
+                    <h5 class="card-title">謝欣汝</h5>
+                    <hr>
+                    <p class="card-text">硬體組裝</p>                  </div>
+                </div>
+                <div class="card" style="border-radius:10px; background:rgba(175, 238, 238, 0);">
+                    <br>
+                    <img src="https://i.imgur.com/ScMFSBE.png" class="card-img-top" style="margin: auto; border-radius:150px; width: 170px;height: 170px;">
+                    <div class="card-body">
+                        <br>
+                      <h5 class="card-title">陳昱妏</h5>
+                      <hr>
+                      <p class="card-text">硬體組裝</p>
+                      </div>
+                  </div>
+            </div>
+      </div>
+    </div>
 
   <div class="row mb-2">
     <div class="col-md-6">
