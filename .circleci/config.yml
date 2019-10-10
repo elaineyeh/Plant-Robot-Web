@@ -83,6 +83,8 @@ jobs:
       - run:
           name: Upload static file
           command: |
+            ls
+            echo gs://$GOOGLE_COULD_STORAGE_BUCKET/static
             gsutil rsync -R static/ gs://$GOOGLE_COULD_STORAGE_BUCKET/static
       - run:
           name: Deploy
