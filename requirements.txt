@@ -69,3 +69,9 @@ soupsieve==1.9.4
 
 # Env
 django-environ==0.4.5
+
+# storage
+django-storages==1.7.2
+
+# for image
+Pillow==6.2.0

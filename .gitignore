@@ -127,3 +127,6 @@ dmypy.json
 
 # Editor
 *~
+
+# GCP
+key.json
