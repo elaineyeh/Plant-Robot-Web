@@ -151,7 +151,7 @@ EMAIL_HOST_PASSWORD = ''
 
 STATICFILES_DIRS = (
     ("font", os.path.join(STATIC_ROOT, 'font')),
-    ("js", os.path.join(STATIC_ROOT,'js')),
-    ("css", os.path.join(STATIC_ROOT,'css')),
-    ("images", os.path.join(STATIC_ROOT,'images')),
+    ("js", os.path.join(STATIC_ROOT, 'js')),
+    ("css", os.path.join(STATIC_ROOT, 'css')),
+    ("images", os.path.join(STATIC_ROOT, 'images')),
 )
