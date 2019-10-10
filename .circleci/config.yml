@@ -50,7 +50,20 @@ jobs:
       - run:
           name: build & push img
           command: |
-            docker build . -t asia.gcr.io/plant-robot/plant-robot-web
+            # Setting gcloud
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+            gcloud --quiet config set project $GOOGLE_PROJECT_ID
+            gcloud --quiet config set compute/zone $GOOGLE_COMPUTE_ZONE
+
+            # Build
+            docker pull asia.gcr.io/plant-robot/plant-robot-web || docker build --cache-from=asia.gcr.io/plant-robot/plant-robot-web -t asia.gcr.io/plant-robot/plant-robot-web .
+
+            # Push image
+            gcloud docker -- push asia.gcr.io/plant-robot/plant-robot-web
+      - run:
+          name: Upload static file
+          command: |
+            echo "Upload static file"
 
 workflows:
   version: 2
