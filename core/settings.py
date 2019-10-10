@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django_filters',
     'bootstrap4',
     'rest_framework',
+    'storages',
 
     'mainsite',
     'todo',
@@ -156,3 +157,8 @@ STATICFILES_DIRS = (
     ("css", os.path.join(STATIC_ROOT, 'css')),
     ("images", os.path.join(STATIC_ROOT, 'images')),
 )
+
+if env.bool('GCP', default=False):
+    DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+    GOOGLE_APPLICATION_CREDENTIALS = env('GOOGLE_APPLICATION_CREDENTIALS')
+    GS_BUCKET_NAME = env('GS_BUCKET_NAME')

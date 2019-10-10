@@ -11,6 +11,7 @@
     </p>
     <br>
     {% if request.user.is_authenticated %}
+        <img src="{{post.image.url}}"/>
         <a class="btn btn-outline-info" href="{% url 'todo:edit' post.pk %}" role="button">修 改</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a class="btn btn-outline-danger" href="{% url 'todo:delete' post.pk %}" role="button">刪 除</a>
