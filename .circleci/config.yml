@@ -33,6 +33,12 @@ jobs:
           command: |
             . venv/bin/activate
             python manage.py test
+            python manage.py collectstatic
+
+      - save_cache:
+          paths:
+            - ./static
+          key: static-file
 
       - store_artifacts:
           path: test-reports
@@ -47,6 +53,9 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
+      - restore_cache:
+          keys:
+            - static-file
       - run:
           name: build & push img
           command: |
@@ -63,7 +72,11 @@ jobs:
       - run:
           name: Upload static file
           command: |
-            echo "Upload static file"
+            gsutil rsync -R static/ gs://$GOOGLE_COULD_STORAGE_BUCKET/static
+      - run:
+          name: Deploy
+          command: |
+            echo "Deploy"
 
 workflows:
   version: 2
