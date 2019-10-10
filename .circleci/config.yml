@@ -16,6 +16,10 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+      - restore_cache:
+          keys:
+            - static-file
+
       - run:
           name: install dependencies
           command: |
@@ -33,6 +37,11 @@ jobs:
           command: |
             . venv/bin/activate
             python manage.py test
+
+      - run:
+          name: collect static
+          command: |
+            . venv/bin/activate
             python manage.py collectstatic
 
       - save_cache:
