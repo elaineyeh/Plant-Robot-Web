@@ -63,4 +63,8 @@ urlpatterns = [
     path('password-reset-confirm/<uidb64>/<token>/',
          PasswordResetConfirmView.as_view(**password_reset_confirm_parms),
          name='password_reset_confirm'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if not getattr(settings, "GCP", False):
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

@@ -151,7 +151,9 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
-if env.bool('GCP', default=False):
+GCP = env.bool('GCP', default=False)
+
+if GCP:
     DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
     GOOGLE_APPLICATION_CREDENTIALS = env('GOOGLE_APPLICATION_CREDENTIALS')
     GS_BUCKET_NAME = env('GS_BUCKET_NAME')
