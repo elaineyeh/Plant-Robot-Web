@@ -49,9 +49,9 @@ jobs:
           docker_layer_caching: true
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
+            - cloud-sdk-dependencies-{{ checksum "requirements.txt" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - cloud-sdk-dependencies-
       - restore_cache:
           keys:
             - static-file
@@ -82,7 +82,7 @@ jobs:
       - save_cache:
           paths:
             - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
+          key: cloud-sdk-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
           name: collect static
