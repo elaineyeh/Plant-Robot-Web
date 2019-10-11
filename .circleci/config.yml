@@ -101,9 +101,14 @@ jobs:
             ls
             echo gs://$GOOGLE_COULD_STORAGE_BUCKET/static
             gsutil rsync -R static/ gs://$GOOGLE_COULD_STORAGE_BUCKET/static
+
+      - add_ssh_keys:
+          fingerprints:
+            - "16:f1:33:67:79:a0:36:3e:42:c1:3c:43:35:95:08:b7"
       - run:
           name: Deploy
           command: |
+            gcloud compute ssh plant-robot-web < deploy/gcp.sh
             echo "Deploy"
 
 workflows:
