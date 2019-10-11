@@ -14,9 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
 
-from django.shortcuts import redirect
 from django.contrib.auth import views as auth_views
 
 from django.conf import settings
@@ -25,7 +23,9 @@ from django.urls import path, include, reverse_lazy
 
 from mainsite.views import index, register, edit
 
-from django.contrib.auth.views import PasswordChangeView, PasswordResetView, PasswordResetConfirmView
+from django.contrib.auth.views import (PasswordChangeView,
+                                       PasswordResetView,
+                                       PasswordResetConfirmView)
 
 
 password_change_parms = dict(
@@ -55,11 +55,12 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('edit/', edit, name='edit'),
     path('todo/', include('todo.urls')),
-    path('password-change/', PasswordChangeView.as_view(**password_change_parms), 
-        name='password_change'),
-    path('password-reset/', PasswordResetView.as_view(**password_reset_parms), 
-        name='password_reset'),
+    path('password-change/',
+         PasswordChangeView.as_view(**password_change_parms),
+         name='password_change'),
+    path('password-reset/', PasswordResetView.as_view(**password_reset_parms),
+         name='password_reset'),
     path('password-reset-confirm/<uidb64>/<token>/',
-        PasswordResetConfirmView.as_view(**password_reset_confirm_parms),
-        name='password_reset_confirm'),
-]
+         PasswordResetConfirmView.as_view(**password_reset_confirm_parms),
+         name='password_reset_confirm'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
