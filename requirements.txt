@@ -75,3 +75,6 @@ django-storages==1.7.2
 
 # for image
 Pillow==6.2.0
+
+# mysql
+mysqlclient==1.4.4
