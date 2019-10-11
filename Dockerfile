@@ -3,7 +3,7 @@ FROM python:3.7
 RUN apt-get update && apt-get install -y \
   gcc \
   musl \
-  default-libmysqlclient-dev
+  libmariadbclient-dev
 
 
 WORKDIR /app
