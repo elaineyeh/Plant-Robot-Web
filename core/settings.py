@@ -129,7 +129,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static/')
 
 STATIC_URL = env('STATIC_URL', default='/static/')
 
@@ -151,10 +151,14 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
+STATICFILES_DIRS = (
+    ("font", os.path.join(STATIC_ROOT, 'font')),
+    ("js", os.path.join(STATIC_ROOT, 'js')),
+    ("css", os.path.join(STATIC_ROOT, 'css')),
+    ("images", os.path.join(STATIC_ROOT, 'images')),
+)
+
 if env.bool('GCP', default=False):
     DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
     GOOGLE_APPLICATION_CREDENTIALS = env('GOOGLE_APPLICATION_CREDENTIALS')
     GS_BUCKET_NAME = env('GS_BUCKET_NAME')
-else:
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
