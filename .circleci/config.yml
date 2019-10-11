@@ -65,11 +65,11 @@ jobs:
             gcloud auth configure-docker --quiet
 
             # Build
-            docker pull asia.gcr.io/plant-robot/plant-robot-web || echo "Image not exists"
-            docker build --cache-from=asia.gcr.io/plant-robot/plant-robot-web -t asia.gcr.io/plant-robot/plant-robot-web .
+            docker pull asia.gcr.io/plant-robot/plant-robot-web:$CIRCLE_BRANCH || echo "Image not exists"
+            docker build --cache-from=asia.gcr.io/plant-robot/plant-robot-web:$CIRCLE_BRANCH -t asia.gcr.io/plant-robot/plant-robot-web:$CIRCLE_BRANCH .
 
             # Push image
-            gcloud docker -- push asia.gcr.io/plant-robot/plant-robot-web
+            gcloud docker -- push asia.gcr.io/plant-robot/plant-robot-web:$CIRCLE_BRANCH
 
       - run:
           name: install dependencies
