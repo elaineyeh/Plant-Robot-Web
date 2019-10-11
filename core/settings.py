@@ -151,6 +151,10 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 STATICFILES_DIRS = (
     ("font", os.path.join(STATIC_ROOT, 'font')),
     ("js", os.path.join(STATIC_ROOT, 'js')),
