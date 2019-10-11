@@ -1,0 +1,23 @@
+version: '3'
+
+
+services:
+  django:
+    image: asia.gcr.io/plant-robot/plant-robot-web:master
+    restart: always
+    networks:
+      - web
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - STATIC_URL=${STATIC_URL}
+      - GCP=True
+      - GS_BUCKET_NAME=${GS_BUCKET_NAME}
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
+    ports:
+      - 80:80
+    volumes:
+      - ./key.json:/app/key.json
+
+networks:
+  web:
+    external: true
