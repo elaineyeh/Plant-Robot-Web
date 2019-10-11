@@ -13,6 +13,7 @@ services:
       - GCP=True
       - GS_BUCKET_NAME=${GS_BUCKET_NAME}
       - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
     ports:
       - 80:80
     volumes:
