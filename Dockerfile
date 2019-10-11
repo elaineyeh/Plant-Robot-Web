@@ -20,6 +20,9 @@ EXPOSE 80
 
 COPY . .
 
+# Set entrypoint
+ENTRYPOINT [ "./docker-entrypoint.sh" ]
+
 # Run
 CMD ["gunicorn", "--workers", "2", "--bind", ":80", "--log-level", "INFO", \
      "core.wsgi:application"]
