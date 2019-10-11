@@ -108,7 +108,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            gcloud compute ssh plant-robot-web < deploy/gcp.sh
+            gcloud compute ssh $USER@plant-robot-web < deploy/gcp.sh
             echo "Deploy"
 
 workflows:
