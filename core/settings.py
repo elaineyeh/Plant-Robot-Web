@@ -157,6 +157,7 @@ if GCP:
     DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
     GOOGLE_APPLICATION_CREDENTIALS = env('GOOGLE_APPLICATION_CREDENTIALS')
     GS_BUCKET_NAME = env('GS_BUCKET_NAME')
+    DEBUG = env.bool('DEBUG', default=False)
 else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
