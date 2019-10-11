@@ -98,8 +98,6 @@ jobs:
       - run:
           name: Upload static file
           command: |
-            ls
-            echo gs://$GOOGLE_COULD_STORAGE_BUCKET/static
             gsutil rsync -R static/ gs://$GOOGLE_COULD_STORAGE_BUCKET/static
 
       - add_ssh_keys:
@@ -108,6 +106,7 @@ jobs:
       - run:
           name: Deploy
           command: |
+            gcloud compute ssh $USER@plant-robot-web ls
             gcloud compute ssh $USER@plant-robot-web < deploy/gcp.sh
             echo "Deploy"
 
