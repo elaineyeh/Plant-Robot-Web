@@ -1,11 +1,11 @@
-{% extends 'layout_user.html' %}
+{% extends 'layout_index.html' %}
 
 {% load bootstrap4 %}
 
 {% block body %}
 <br>
 <div class="row">
-  <div class="col">
+  <div class="col-6 offset-3">
     <h3>修改會員資料</h3>
     <form action="" method="post" class="form">
       {% csrf_token %}

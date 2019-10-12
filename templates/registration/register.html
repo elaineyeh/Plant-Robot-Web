@@ -1,25 +1,24 @@
-{% extends 'layout_user.html' %}
+{% extends 'layout_index.html' %}
 
 {% load bootstrap4 %}
 
 {% block body %}
 <br>
-    <div class="row">
-        <div class="col">
-          <h3>註冊會員資料</h3>
-          <br>
-          <form action="" method="post" class="form">
-              {% csrf_token %}
-              {% bootstrap_form form %}
-              {% buttons %}
-                <button type="submit" class="btn btn-info" style="float:left">
-                  確定
-                </button>
-              {% endbuttons %}
-          </form>
-          &nbsp;&nbsp;
-          <a class="btn btn-outline-info" href="{% url 'index' %}" role="button">取消</a>
-        </div>
-    </div>
-  <br><br>
+<div class="row">
+  <div class="col-6 offset-3">
+    <h3>註冊會員資料</h3>
+    <br>
+    <form action="" method="post" class="form">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% buttons %}
+      <button type="submit" class="btn btn-info" style="float:left">
+        確定
+      </button>
+      {% endbuttons %}
+    </form>
+    &nbsp;&nbsp;
+    <a class="btn btn-outline-info" href="{% url 'index' %}" role="button">取消</a>
+  </div>
+</div>
 {% endblock %}

@@ -1,26 +1,26 @@
-{% extends 'layout_user.html' %}
+{% extends 'layout_index.html' %}
 
 {% load bootstrap4 %}
 
 {% block body %}
+<div class="row">
+  <div class="col-6 offset-3">
     <br>
-    <div class="row">
-        <div class="col">
-                <h3>會員登入</h3>
-                <br>
-                <form action="" method="post" class="form">
-                    {% csrf_token %}
-                    {% bootstrap_form form %}
-                    <a href="{% url 'register' %}" class="mb-2">還沒有加入會員嗎?</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="{% url 'password_reset' %}" class="mb-2">忘記密碼?</a>
-                    <br><br>
-                    {% buttons %}
-                      <button type="submit" class="btn btn-info">
-                        登入
-                      </button>
-                    {% endbuttons %}
-                  </form>
-        </div>
-    </div>
+    <h3>會員登入</h3>
+    <br>
+    <form action="" method="post" class="form">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <a href="{% url 'register' %}" class="mb-2">還沒有加入會員嗎?</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="{% url 'password_reset' %}" class="mb-2">忘記密碼?</a>
+      <br><br>
+      {% buttons %}
+      <button type="submit" class="btn btn-info">
+        登入
+      </button>
+      {% endbuttons %}
+    </form>
+  </div>
+</div>
 {% endblock %}
