@@ -1,21 +1,23 @@
-{% extends 'layout_post.html' %}
+{% extends 'layout_index.html' %}
 
 {% load bootstrap4 %}
 
 {% block body %}
-<h1>刪除文章</h1>
-    <div class="row">
-        <div class="col">
-                <form action="" method="post" class="form">
-                    {% csrf_token %}
-                    {% bootstrap_form form %}
-                    <br>
-                    {% buttons %}
-                      <button type="submit" class="btn btn-outline-danger">
-                        Submit
-                      </button>
-                    {% endbuttons %}
-                </form>
-        </div>
-    </div>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <br>
+    <h1>刪除文章</h1>
+    <br>
+    <form action="" method="post" class="form">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <br>
+      {% buttons %}
+      <button type="submit" class="btn btn-outline-danger float-right">
+        Submit
+      </button>
+      {% endbuttons %}
+    </form>
+  </div>
+</div>
 {% endblock %}
