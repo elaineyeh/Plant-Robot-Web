@@ -12,11 +12,15 @@
       {% csrf_token %}
       {% bootstrap_form form %}
       <br>
+      
+      <div style="padding:15px">
       {% buttons %}
       <button type="submit" class="btn btn-outline-danger float-right">
-        Submit
+        刪除
       </button>
       {% endbuttons %}
+      </div>
+      
     </form>
   </div>
 </div>

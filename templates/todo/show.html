@@ -8,19 +8,20 @@
   <div class="row">
     <div class="col-8"><h2>{{post.title}}</h2></div>
     <div class="col-4">
-      <span class="float-right">{{ post.pub_date }}</span>
+      
     </div>
   </div>
 
   <div class="row">
     <div class="col-12">
-      <span class="float-right">#{{ post.category }}</span>
+     <span class="float-left">{{ post.pub_date }}</span>
+      <span class="float-left">&nbsp&nbsp #{{ post.category }}</span>
     </div>
   </div>
 
   <div class="row">
     <div class="col-12">
-      <img src="{{post.image.url}}"/>
+      <img src="{{post.image.url}}" style="max-width: 100%;"/>
       <p>
         {{ post.body | linebreaks }}
       </p>
