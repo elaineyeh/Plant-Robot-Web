@@ -6,22 +6,20 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <br>
-    <h1>刪除文章</h1>
+    <div style="padding:15px">
+          <h3>刪除文章</h3>
     <br>
     <form action="" method="post" class="form">
       {% csrf_token %}
       {% bootstrap_form form %}
       <br>
-      
-      <div style="padding:15px">
       {% buttons %}
       <button type="submit" class="btn btn-outline-danger float-right">
         刪除
       </button>
       {% endbuttons %}
-      </div>
-      
     </form>
+    </div>
   </div>
 </div>
 {% endblock %}

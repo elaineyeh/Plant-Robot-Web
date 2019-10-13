@@ -5,8 +5,9 @@
 {% block body %}
 <div class="row">
   <div class="col-md-8 offset-md-2 col-xs-12">
-    <br>
-    <h1>新增文章</h1>
+    <div style="padding:15px">
+      <br>
+    <h3>新增文章</h3>
     <br>
     <form action="" method="post" class="form"  enctype="multipart/form-data">
       {% csrf_token %}
@@ -22,6 +23,7 @@
       </div>
       {% endbuttons %}
     </form>
+    </div>
   </div>
 </div>
 {% endblock %}
