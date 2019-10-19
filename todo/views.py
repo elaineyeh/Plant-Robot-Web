@@ -6,10 +6,11 @@ from django.shortcuts import redirect, get_object_or_404
 
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
 def index(request):
     todos = Post.objects.all()
     return render(request, 'todo/index.html', {'todos':todos})
+
 
 @login_required
 def new(request):
@@ -22,7 +23,7 @@ def new(request):
         return redirect('todo:index')
 
     return render(request, 'todo/new.html', {
-        'form':form
+        'form': form
     })
 
 
@@ -36,13 +37,18 @@ def delete(request, pk):
         return redirect('todo:index')
 
     return render(request, 'todo/delete.html', {
-        'form':form
+        'form': form
     })
+
 
 @login_required
 def edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    form = TodoModelForm(request.POST or None, request.FILES or None, instance=post)
+    form = TodoModelForm(
+        request.POST or None,
+        request.FILES or None,
+        instance=post
+    )
 
     if form.is_valid():
         post.creator = request.user
@@ -50,8 +56,9 @@ def edit(request, pk):
         return redirect('todo:index')
 
     return render(request, 'todo/edit.html', {
-        'form':form
+        'form': form
     })
+
 
 def show(request, pk):
     post = get_object_or_404(Post, pk=pk)
