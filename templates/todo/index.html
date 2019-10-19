@@ -8,6 +8,16 @@
       <br>
         <h3>知識文章列表</h3>
         <br>
+  <form class="form-inline">
+  <div class="form-row">
+    <div class="col-9">
+      <input type="text" class="form-control" placeholder="搜尋文章">
+    </div>
+    <div class="col-3">
+  <button type="submit" class="btn btn-primary mb-2">搜尋</button>
+    </div>
+  </div>
+</form>
         <div class="list-group list-group-flush">
           {% for todo in todos %}
           <a href="{% url 'todo:show' todo.pk %}" class="list-group-item list-group-item-action">{{todo.title}}</a>
