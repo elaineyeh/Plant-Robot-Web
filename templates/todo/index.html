@@ -12,7 +12,7 @@
         <!-- Search and Filter -->
         <div class="form-row">
           <form class="form-inline">
-            <div class="col-10">
+            <div class="col-12">
 
               <div class="input-group">
                 <!-- Search -->
@@ -33,7 +33,7 @@
                 </select>
 
                 <div class="input-group-append">
-                  <button class="btn btn-outline-primary" type="submit">搜尋</button>
+                  <button class="btn btn-outline-info" type="submit">搜尋</button>
                 </div>
 
               </div>
@@ -43,6 +43,7 @@
 
         <!-- List -->
         <div class="list-group list-group-flush">
+        <br>
           {% for todo in todos %}
           <a href="{% url 'todo:show' todo.pk %}" class="list-group-item list-group-item-action">{{todo.title}}</a>
           {% empty %}
