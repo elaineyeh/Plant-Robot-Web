@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include, reverse_lazy
 
-from mainsite.views import index, register, edit
+from mainsite.views import index, register, edit, operation
 
 from django.contrib.auth.views import (PasswordChangeView,
                                        PasswordResetView,
@@ -49,6 +49,7 @@ password_reset_confirm_parms = dict(
 
 urlpatterns = [
     path('', index, name='index'),
+    path('operation/', operation, name='operation'),
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),

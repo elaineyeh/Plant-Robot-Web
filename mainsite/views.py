@@ -11,6 +11,9 @@ from .forms import UserForm, UserModelForm
 def index(request):
     return render(request, 'mainsite/index.html')
 
+def operation(request):
+    return render(request, 'mainsite/operation.html')
+
 def register(request):
     form = UserForm(request.POST or None)
 
