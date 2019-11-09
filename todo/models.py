@@ -3,6 +3,7 @@ import time
 
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 def mainsite_directory_path(instance, filename):
@@ -24,6 +25,8 @@ class Category(models.Model):
 class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT,
                                  verbose_name='類別')
+    user_id = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='使用者',
+                                blank=True, null=True, default=None)
     title = models.CharField('題目', max_length=64)
     body = models.TextField('文章', max_length=1000)
     pub_date = models.DateTimeField(default=timezone.now)
