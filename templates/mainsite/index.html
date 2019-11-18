@@ -11,7 +11,7 @@
 
   </div>
   <div class="col-4" style="position: absolute;top: 40%;left:10%;">
-    <h1 class="loading-text">Plant Robot</h1>
+    <h1 class="loading-text loading-text-ani">Plant Robot</h1>
   </div>
   <div class="col-4" style="height:280px;">
   </div>
@@ -44,4 +44,18 @@
     </div>
   </div>
 </div>
+{% endblock %}
+
+{% block end_script %}
+<script>
+function loadText(){
+  $('.loading-text').addClass("loading-text-ani");
+  setTimeout(removeLoadText, 4000);
+}
+function removeLoadText(){
+  $('.loading-text').removeClass("loading-text-ani");
+  setTimeout(loadText, 1000);
+}
+setTimeout(removeLoadText, 6000);
+</script>
 {% endblock %}
