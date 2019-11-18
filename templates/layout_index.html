@@ -25,6 +25,32 @@
               font-size: 3.5rem;
           }
       }
+
+      .loading-text {
+        font-family: Consolas, Monaco, monospace;
+        display: inline-block;
+        color: #227700;
+        font-weight: bold;
+        width: 12ch;
+        animation: loading-text-typing 4s steps(12) infinite,
+        loading-text-caret 1s steps(1) infinite;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid;
+      }
+      
+      @keyframes loading-text-typing {
+        from {
+          width: 0;
+        }
+      }
+
+      @keyframes loading-text-caret {
+        50% {
+          border-color: transparent;
+        }
+      }
+
     </style>
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
